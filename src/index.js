@@ -18,18 +18,6 @@ function Square(props) {
             xIsNext:true,
         };
     }
-    handleClick(i){
-      const squares = this.state.squares.slice();
-      if(calculateWinner(squares) || squares[i] )
-        return;
-      squares[i] = this.state.xIsNext ? 'X' : 'O';
-      this.setState({
-        squares:squares,
-        xIsNext: !this.state.xIsNext,
-      });    
-    }
-
-
     renderSquare(i) {
       return (
         <Square 
@@ -88,7 +76,7 @@ function Square(props) {
         xIsNext: !this.state.xIsNext,
       });
     }
-    
+
     render() {
       const history = this.state.history;
       const current = history[history.length - 1];
